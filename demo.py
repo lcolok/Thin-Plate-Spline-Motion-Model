@@ -110,7 +110,7 @@ def find_best_frame(source, driving, cpu):
     kp_source = normalize_kp(kp_source)
     norm  = float('inf')
     frame_num = 0
-    for i, image in tqdm(enumerate(driving)):
+    for i, image in tqdm(enumerate(driving), total=len(driving)):
         try:
             kp_driving = fa.get_landmarks(255 * image)[0]
             kp_driving = normalize_kp(kp_driving)
